@@ -25,6 +25,14 @@ namespace LoginJWT.Controllers
             var result = await _dbContext.Users.ToListAsync();
             return Ok(result);
         }
+        [HttpGet("GetAll")]
+        [Authorize(Roles = "Client")]
+
+        public async Task<IActionResult> GetAllAny()
+        {
+            var result = await _dbContext.Users.ToListAsync();
+            return Ok(new { isSuccess = result.Any(), total = result.Count(), data = result });
+        }
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] User user)
