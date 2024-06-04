@@ -27,8 +27,16 @@ namespace LoginJWT.Controllers
             if (ModelState.IsValid)
             {
                 var user = await Autenticate(login);
-                var token = GenerateToken(user);
-                return Ok(token);
+                if (user != null)
+                {
+                    var token = GenerateToken(user);
+                    return Ok(new
+                    {
+                        email = login.Email,
+                        token = token,
+                    });
+                }
+                return Unauthorized("Los datos ingresados no son correctos");
             }
             return BadRequest("No hay coincidencias");
         }
