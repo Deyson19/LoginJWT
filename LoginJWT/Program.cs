@@ -16,6 +16,18 @@ builder.Services.AddDbContext<LoginDbContext>(op =>
     op.UseSqlServer(connectionString);
 });
 
+//cors
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("angular", builder =>
+    {
+        builder.WithOrigins("http://localhost:4200")
+        .SetIsOriginAllowedToAllowWildcardSubdomains()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(op =>
@@ -71,7 +83,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("angular");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
