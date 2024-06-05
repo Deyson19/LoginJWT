@@ -1,4 +1,6 @@
 using LoginJWT.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -40,6 +42,61 @@ namespace LoginJWT.Controllers
             }
             return BadRequest("No hay coincidencias");
         }
+        [Authorize]
+        [HttpGet("check-token")]
+        public async Task<IActionResult> CheckToken()
+        {
+            var user = HttpContext.User;
+            var token = await HttpContext.GetTokenAsync("access_token");
+            var idUser = user.FindFirstValue(ClaimTypes.NameIdentifier);
+            var usuarioActual = await GetSingleUser(Guid.Parse(idUser));
+            var isValidToken = Validate(token);
+            if (isValidToken)
+            {
+                var x = GenerateToken(usuarioActual);
+                token = x.ToString();
+            }
+
+            return Ok(new
+            {
+                email = usuarioActual.EmailAddress,
+                token = token
+            });
+        }
+        private bool Validate(string token)
+        {
+            if (string.IsNullOrWhiteSpace(token)) { return false; }
+            var secretkey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:SecretKey"]!));
+
+            var audience = _config["Jwt:Audience"];
+            var issuer = _config["Jwt:Issuer"];
+            var tokenHandler = new JwtSecurityTokenHandler();
+            try
+            {
+                var validationParameters = new TokenValidationParameters
+                {
+                    ValidateAudience = true,
+                    ValidateIssuer = true,
+                    ValidateLifetime = true,
+                    ValidIssuer = issuer,
+                    ValidAudience = audience,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = secretkey,
+                    ClockSkew = TimeSpan.Zero
+                };
+                tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
+                return true;
+            }
+            catch (SecurityTokenException ex)
+            {
+                return false;
+            }
+        }
+
+        private async Task<User> GetSingleUser(Guid idUsuario)
+        {
+            return await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == idUsuario);
+        }
 
         private async Task<User> Autenticate(Login login)
         {
@@ -58,7 +115,7 @@ namespace LoginJWT.Controllers
             //create claims
             var claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.NameIdentifier,userDTO.Username),
+                new Claim(ClaimTypes.NameIdentifier,userDTO.Id.ToString()),
                 new Claim(ClaimTypes.Email,userDTO.EmailAddress),
                 new Claim(ClaimTypes.GivenName,userDTO.FirstName),
                 new Claim(ClaimTypes.Surname,userDTO.LastName),
