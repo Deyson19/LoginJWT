@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("f883a126-3956-4f51-98ab-25b023b307dc")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginJWT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+456fb7cbe11dbf50d400d2c849774f2c8edd031f")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginJWT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginJWT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VudJ/zVVlx9xcFBe9jzZJAMnNXAZXqlG/OlYkMRC3pAge02hPFrD1LrR9OpSCNHPLlfN0Rw3e7AQQhfqoVCyHQ==",
+  "dgSpecHash": "lERk31GisJc=",
   "success": true,
-  "projectFilePath": "d:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj",
+  "projectFilePath": "D:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Deyson\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Deyson\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -44,6 +44,7 @@
     "C:\\Users\\Deyson\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "C:\\Users\\Deyson\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Deyson\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\Deyson\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.20.1\\microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512",
     "C:\\Users\\Deyson\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Deyson\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Deyson\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",

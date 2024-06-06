@@ -129,9 +129,10 @@ D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\staticwebassets\msb
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LoginJWT.props
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\staticwebassets.pack.json
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\scopedcss\bundle\LoginJWT.styles.css
-D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\LoginJWT.csproj.CopyComplete
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\LoginJWT.dll
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\refint\LoginJWT.dll
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\LoginJWT.pdb
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\LoginJWT.genruntimeconfig.cache
 D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\ref\LoginJWT.dll
+D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\LoginJWT.sourcelink.json
+D:\Developer\.NET\WebApis\LoginJWT\LoginJWT\obj\Debug\net8.0\LoginJWT.csproj.Up2Date

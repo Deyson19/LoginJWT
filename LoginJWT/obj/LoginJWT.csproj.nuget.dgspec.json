@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj": {}
+    "D:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj": {}
   },
   "projects": {
-    "d:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj": {
+    "D:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj",
+        "projectUniqueName": "D:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj",
         "projectName": "LoginJWT",
-        "projectPath": "d:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj",
+        "projectPath": "D:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\LoginJWT.csproj",
         "packagesPath": "C:\\Users\\Deyson\\.nuget\\packages\\",
-        "outputPath": "d:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\obj\\",
+        "outputPath": "D:\\Developer\\.NET\\WebApis\\LoginJWT\\LoginJWT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Deyson\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -64,6 +70,10 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.20.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -88,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
