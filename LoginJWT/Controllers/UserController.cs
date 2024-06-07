@@ -26,7 +26,7 @@ namespace LoginJWT.Controllers
             return Ok(result);
         }
         [HttpGet("GetAll")]
-        [Authorize(Roles = "Client")]
+        //[Authorize(Roles = "Client")]
 
         public async Task<IActionResult> GetAllAny()
         {
