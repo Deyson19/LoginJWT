@@ -1,11 +1,32 @@
 version: '3.4'
 
+networks:
+  loginjwtwebapi:
+
 services:
-  loginjwtapi:
-    image: loginjwt
+  loginjwtdb:
+    container_name: db-loginjwt
+    image: mcr.microsoft.com/mssql/server:2019-latest
     ports:
-      - 7087:7087
+      - 1433:1433
+    environment: 
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Admin.Docker-SQL
+    networks:
+      - loginjwtwebapi
+  loginjwtapi:
+    container_name: loginjwt-backend
+    image: ${DOCKER_REGISTRY-}loginjwtapi
+    build:
+       context: .
+       dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    depends_on:
+      - loginjwtdb
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-    volumes:
-      - ~/.vsdbg:/remote_debugger:rw
+      - DB_HOST=loginjwtdb
+      - DB_NAME=LoginJWT-2024
+      - DB_SA_PASSWORD=Admin.Docker-SQL
+    networks:
+      - loginjwtwebapi
